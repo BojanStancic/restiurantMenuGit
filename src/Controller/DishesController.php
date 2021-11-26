@@ -36,7 +36,7 @@ class DishesController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
-            //EntityMenager
+            //EntityManager
             $em = $this->getDoctrine()->getManager();
             $image = $request->files->get('dish')['attachment'];
             // $image = $form->get('attachment')->getData();
@@ -79,7 +79,7 @@ class DishesController extends AbstractController
         $em->flush();
 
         //message
-        $this->addFlash('success', 'Dish was deleted successfuly!');
+        $this->addFlash('success', 'Dish was deleted successfully!');
 
         return $this->redirect($this->generateUrl('dishes.edit'));
     }
