@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ListOf{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <br>
+        <h1>ListOf</h1>
+        <br>
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ list_of.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ list_of.name }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ list_of.city }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ list_of.telephone }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        {{ include('list_of/_delete_form.html.twig') }}
+        <a class="btn btn-success" href="{{ path('list_of_edit', {'id': list_of.id}) }}">Edit</a>
+        <br><br>
+        <a class="btn btn-primary"href="{{ path('list_of_index') }}">Back to list</a>
+
+    </div>
+    <br>
+
+
+{% endblock %}

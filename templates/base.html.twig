@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<title>Restauran Menu</title>
+	<title>Restauran Menu | Kenzo</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="SolMusic HTML Template">
 	<meta name="keywords" content="music, html">
@@ -38,7 +38,7 @@
 	<!-- Header section -->
 	<header class="header-section clearfix">
 		<a href="{{path('home')}}" class="site-logo">
-			<img src="{{asset('img/logo17.png')}}" alt="" style="height:40px">
+			<img src="{{asset('img/logo4.png')}}" alt="" style="height:40px">
 		</a>
 		<div class="header-right">
 			<div class="user-panel">
@@ -53,16 +53,18 @@
 		</div>
 		<ul class="main-menu">
 			<li><a href="{{path('home')}}">Welcome</a></li>
-			<li><a href="#">About</a></li>
-      <li><a href="blog.html">News</a></li>
-			<li><a href="contact.html">Contact</a></li>
+			<li><a href="{{ path('menu') }}">Menu Card</a></li>
+			<li><a href="{{ path('order') }}">Orders</a></li>
+			<li><a href="{{ path('mail') }}">Waiter</a></li>
+
 			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 			<li><a href="#">Employee</a>
 				<ul class="sub-menu">
 					<li><a href="{{path('dishes.edit')}}">Dishes</a></li>
 					<li><a href="{{path('dishes.create')}}">Create</a></li>
-					<li><a href="playlist.html">Playlist</a></li>
-					<li><a href="artist.html">Artist</a></li>
+					<li><a href="{{path('order')}}">Orders</a></li>
+					<li><a href="{{path('archive')}}">Archived</a></li>
+					<li><a href="{{ path('list_of_index') }}">ListOf</a></li>
 					<li><a href="{{ path('register') }}" class="register">Register</a></li>
 					<li><a href="{{ path('app_logout') }}">Logout</a></li>
 				</ul>
@@ -80,12 +82,12 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="section-title">
-						<h2>Unlimited Access to 100K tracks</h2>
+						<h2>All you can eat for 19.95 &euro;</h2>
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-					<a href="#" class="site-btn">Try it now</a>
+					<p>Enjoy some mouth watering Serbian food at one of the largest Serbian restaurants in Europe. If you're looking for the perfect place to 		   					celebrate your big event, then our restaurant is the place to be. Our buffet menu is specially crafted to tingle your taste buds and leave 							your guests satisfied. Tease your taste buds with some of our unique and delicious soups, salads, chicken paprika, and more.</p>
+					<a href="{{ path('menu') }}" class="site-btn">Try it now</a>
 				</div>
 			</div>
 		</div>
@@ -102,38 +104,37 @@
 							<div class="footer-widget">
 								<h2>About us</h2>
 								<ul>
-									<li><a href="">Our Story</a></li>
-									<li><a href="">Sol Music Blog</a></li>
-									<li><a href="">History</a></li>
+									<li><a href="">Welcome</a></li>
+									<li><a href="">Menu</a></li>
+									<li><a href="">Order</a></li>
 								</ul>
 							</div>
 						</div>
 						<div class="col-sm-4">
 							<div class="footer-widget">
-								<h2>Products</h2>
+								<h2>Menu Card</h2>
 								<ul>
-									<li><a href="">Music</a></li>
-									<li><a href="">Subscription</a></li>
-									<li><a href="">Custom Music</a></li>
-									<li><a href="">Footage</a></li>
+									<li><a href="">Drinks</a></li>
+									<li><a href="">Appetizers</a></li>
+									<li><a href="">Main Dishes</a></li>
+									<li><a href="">Desserts</a></li>
 								</ul>
 							</div>
 						</div>
 						<div class="col-sm-4">
 							<div class="footer-widget">
-								<h2>Playlists</h2>
+								<h2>Contact</h2>
 								<ul>
-									<li><a href="">Newsletter</a></li>
-									<li><a href="">Careers</a></li>
-									<li><a href="">Press</a></li>
-									<li><a href="">Contact</a></li>
+									<li><a href="">Waiter</a></li>
+									<li><a href="">Impresums</a></li>
+									<li><a href="">Login</a></li>
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-6 col-lg-5 order-lg-1">
-					<img src="{{asset('img/logo.png')}}" alt="">
+					<img src="{{asset('img/logo4.png')}}" alt="">
 					<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> Downloaded from <a href="https://themeslab.org/" target="_blank">Themeslab</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
@@ -151,6 +152,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<!-- Footer section end -->
 	
 	<!--====== Javascripts & Jquery ======-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 	<script src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script src="{{asset('js/jquery.slicknav.min.js')}}"></script>

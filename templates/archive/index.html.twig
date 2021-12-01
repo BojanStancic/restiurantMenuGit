@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArchiveController!{% endblock %}
+
+{% block body %}
+    {% set summe = 0 %}
+    <br>
+    <div class="container">
+        <h2>Archived Orders</h2>
+        <br>
+        <table class="table table-striped" >
+            <thead>
+            <tr>
+                <td>OrderNo</td>
+                <td>Name</td>
+                <td>Status</td>
+                <td>Price</td>
+                <td></td>
+            </tr>
+
+            </thead>
+            <tbody>
+            {% for archiv in archive %}
+
+
+                    {% set summe = summe + archiv.price %}
+
+                    <tr>
+                        <td>{{ archiv.orderNo }}</td>
+                        <td>{{ archiv.name }}</td>
+                        <td>{{ archiv.status }}</td>
+                        <td>{{ archiv.price }}</td>
+
+                        <td>
+
+                                <a class="btn btn-outline-danger btn-sm" href="{{ path('removeArchived', {id: archiv.id}) }}" >Remove</a>
+
+                        </td>
+
+
+
+
+
+
+                    </tr>
+
+            {% endfor %}
+
+            <td></td>
+
+            <td></td>
+
+            <td></td>
+            <td>Total: {{ summe }} &euro;</td>
+            <td></td>
+            </tbody>
+
+
+        </table>
+    </div>
+
+
+
+{% endblock %}

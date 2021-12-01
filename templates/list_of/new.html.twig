@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ListOf{% endblock %}
+
+{% block body %}
+    <br>
+    <div class="container">
+        <h1>Create</h1>
+        <br>
+
+        {{ include('list_of/_form.html.twig') }}
+
+        <br>
+        <a class="btn btn-outline-primary float-right" href="{{ path('list_of_index') }}">Back to list</a>
+
+    </div>
+{% endblock %}

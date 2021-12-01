@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ListOf index{% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+    <h1>List of Employees</h1>
+    <br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Telephone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for list_of in list_ofs %}
+            <tr>
+                <td>{{ list_of.id }}</td>
+                <td>{{ list_of.name }}</td>
+                <td>{{ list_of.city }}</td>
+                <td>{{ list_of.telephone }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('list_of_show', {'id': list_of.id}) }}">Show</a>
+                    <a class="btn btn-outline-primary" href="{{ path('list_of_edit', {'id': list_of.id}) }}">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">No records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('list_of_new') }}">Create new</a>
+
+
+
+</div>
+{% endblock %}

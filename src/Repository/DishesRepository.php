@@ -19,6 +19,15 @@ class DishesRepository extends ServiceEntityRepository
         parent::__construct($registry, Dishes::class);
     }
 
+    public function find5Euro (int $id)
+    {
+        $qb = $this->createQueryBuilder('d');
+        $qb->select('d.name, d.price')
+            ->where('d.price <= 5');
+
+        return $qb->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Dishes[] Returns an array of Dishes objects
     //  */

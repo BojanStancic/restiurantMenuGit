@@ -91,5 +91,16 @@ class DishesController extends AbstractController
         ]);
 
     }
+
+    #[Route('/price/{id}', name: 'price')]
+    public function price($id, DishesRepository $dishesRepository ) {
+
+        $dish = $dishesRepository->find5Euro($id);
+
+        dump($dish);
+
+    }
+
+
     
 } 
